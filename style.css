@@ -369,6 +369,7 @@ body::-webkit-scrollbar-thumb{
     #nav{
         position: static;
         margin: 0px;
+        width: 90%;
     }
     #nav h3{
         display: none;

@@ -10,12 +10,26 @@ body {
     width: 100%;
 }
 
+#main{
+    overflow: hidden;
+}
 
 *::selection {
     color: white;
     background-color: black;
 }
 
+body::-webkit-scrollbar{
+    width: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+    width: 5px;
+    background-color: black;
+    border-radius: 5px;
+}
 
 
 #nav {
@@ -42,6 +56,8 @@ body {
 
 #nav .left h3 {
     font-size: 16px;
+    position: relative;
+    cursor: pointer;
 }
 
 
@@ -59,6 +75,7 @@ body {
 
 .hero {
     display: block;
+    position: relative;
 }
 
 
@@ -69,19 +86,19 @@ body {
 
 .heading {
     position: absolute;
-    left: 50vw;
-    top: 40vh;
+    left: 50%;
+    top: 35%;
     transform: translate(-50%, 50%);
     text-align: center;
 }
 
 .heading h4 {
-    font-size: 19px;
+    font-size: 1.5rem;
 }
 
 .heading h3 {
-    font-size: 39px;
-    margin-top: 20px;
+    font-size: 3rem;
+    margin-top: 5vh;
 }
 
 
@@ -103,7 +120,7 @@ body {
 
 .shirts .box {
     height: 500px;
-    width: 322px;
+    width: 325px;
 }
 
 .toggle {
@@ -233,6 +250,9 @@ body {
 
 .context h4{
     color: rgba(0, 0, 0, 0.562);
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
 }
 
 .footerright{
@@ -267,12 +287,211 @@ body {
 }
 
 .fourth{
+    position: relative;
+    height: 350px;
+}
+
+.fourth .img-scroll{
+    position: absolute;
     display: flex;
     gap: 150px;
     margin: 30px 0px;
-    overflow: hidden;
+    animation: going 25s linear infinite;
+}
+
+.fourth .logo-scroll{
+    position: absolute;
+    top: 150px;
+    z-index: -1;
+    animation: going2 25s linear infinite;
+    display: flex;
+    gap: 250px;
 }
 
 .fourth img{
     height: 300px;
+}
+
+
+@keyframes going {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes going2 {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+#nav h3{
+    position: relative;
+    cursor: pointer;
+}
+
+
+#nav h3::after{
+    content: "";
+    position: absolute;
+    top:6px;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background-color: rgba(94, 161, 248, 0.63);
+    transition: all linear 0.3s;
+}
+.context h4::after{
+    content: "";
+    position: absolute;
+    top:6px;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background-color: rgba(94, 161, 248, 0.63);
+    transition: all linear 0.3s;
+}
+
+#nav h3:hover::after{
+    width: 100%;
+}
+.context h4:hover::after{
+    width: 100%;
+}
+
+
+
+@media screen and (max-width:800px) {
+    #nav{
+        position: static;
+        margin: 0px;
+    }
+    #nav h3{
+        display: none;
+    }
+    #nav .left{
+        width: 55%;
+        justify-content: space-between;
+    }
+
+    /* .heading {
+        left: 50%;
+        top: 20%;
+    } */
+
+    .heading h3{
+        font-size: 1rem;
+        margin-top: 1vh;
+        font-weight: 400;
+    }
+    .heading h4{
+        font-size: 0.5rem;
+        font-weight: 400;
+    }
+
+    .shirts .box {
+        height: fit-content;
+        width: 100px;
+    }
+
+    .third1{
+        height: 30vh;
+    }
+    .third2{
+        height: 30vh;
+    }
+
+    .btn{
+        padding: 10px 10px;
+        font-size: 10px;
+    }
+
+    .img h1{
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0px;
+    }
+
+
+    .fifth {
+        flex-direction: column;
+    }
+    
+    .fifth .container{
+        padding: 10px 20px;
+        width: 300px;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: start;
+        border-bottom: 1px solid black;
+    }
+    
+    .container img{
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .container h4{
+        font-size: 9px;
+    }
+
+    .fourth img{
+        height: 100px;
+    }
+
+    .fourth h1{
+        font-size: 20px;
+    }
+
+    .fourth .logo-scroll{
+        top: 65px;
+    }
+
+    .fourth{
+        height: 130px;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+        height: 100vh;
+        margin: 0px 10px;
+        justify-content: space-evenly;
+    }
+    
+    .footerleft{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+        
+    }
+
+    
+    .footerright{
+        width: 100%;
+        text-align: center;
+    }
+
+    .footbtn{
+        width: 100%;
+    }
+    
+    .third1 {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .third1 .img{
+        width: 100%;
+        height: 60vh;
+        margin: 5px 10px;
+    }
+    .third2{
+        width: 100vw;
+        height: 60vh;
+        margin: 5px 10px;
+    }
 }

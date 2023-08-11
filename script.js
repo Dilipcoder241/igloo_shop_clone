@@ -7,6 +7,9 @@ tl.from("#nav", {
 })
 
 
-gsap.to(".fourth",{
-    
-})
+// gsap.from(".fourth img",{
+//     x:-400,
+//     duration:20,
+//     repeat:-1,
+//     yoyo:true,
+// })

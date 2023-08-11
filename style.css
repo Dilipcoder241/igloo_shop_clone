@@ -60,6 +60,10 @@ body::-webkit-scrollbar-thumb{
     cursor: pointer;
 }
 
+#nav .left h4{
+    display: none;
+}
+
 
 #nav .right {
     display: flex;
